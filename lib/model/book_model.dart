@@ -12,18 +12,7 @@ class Book {
     required this.rating, required this.isRead
   });
 
-  // Map<String, dynamic> toMap() {
-  //   return {
-  //     'id': id,
-  //     'title': title,
-  //     'author' : author,
-  //     'description' : description,
-  //     'rating' : rating,
-  //     'isRead' : isRead
-  //   };
-  // }
-
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> fromMap() {
     return {
       'id' : id,
       'title' : title,
@@ -33,7 +22,7 @@ class Book {
       'isRead' : isRead,
     };
   }
-  factory Book.fromMap(Map<String, dynamic> map) {
+  factory Book.fromMap(Map<String, dynamic> map){
     return Book(
       id: map['id'],
       title: map['title'],
@@ -42,6 +31,5 @@ class Book {
       rating: map['rating'],
       isRead: map['isRead'],
     );
-    
   }
 }
