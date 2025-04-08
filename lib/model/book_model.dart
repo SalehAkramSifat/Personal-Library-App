@@ -12,7 +12,7 @@ class Book {
     required this.rating, required this.isRead
   });
 
-  Map<String, dynamic> fromMap() {
+  Map<String, dynamic> toMap() {
     return {
       'id' : id,
       'title' : title,
