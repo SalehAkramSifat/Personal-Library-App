@@ -42,5 +42,6 @@ class Book {
       rating: map['rating'],
       isRead: map['isRead'],
     );
+    
   }
 }
