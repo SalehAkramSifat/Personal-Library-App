@@ -39,16 +39,19 @@ class BookDB {
     var result = await db.insert('books', book.toMap());
     return result;
   }
+
   Future<List<Book>> getBooks() async {
     final db = await database;
     var result = await db.query('books');
     return result.map((map)=> Book.fromMap(map)).toList();
   }
+
   Future<int> updateBook(Book books) async {
     final db = await database;
     var result = await db.update('books', books.toMap(), where: 'id=?', whereArgs: [books.id]);
     return result;
   }
+
   Future<int> deleteBook(int id) async {
     final db = await database;
     var result = await db.delete('books', where: 'id=?', whereArgs: [id]);
