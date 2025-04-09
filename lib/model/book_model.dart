@@ -7,7 +7,7 @@ class Book {
   bool isRead;
 
   Book({
-    required this.id, required this.title,
+    this.id, required this.title,
     required this.author, required this.description,
     required this.rating, required this.isRead
   });
@@ -19,7 +19,7 @@ class Book {
       'author' : author,
       'description' : description,
       'rating' : rating,
-      'isRead' : isRead,
+      'isRead' : isRead ? 1 : 0,
     };
   }
   factory Book.fromMap(Map<String, dynamic> map){
@@ -29,7 +29,7 @@ class Book {
       author: map['author'],
       description: map['description'],
       rating: map['rating'],
-      isRead: map['isRead'],
+      isRead: map['isRead'] == 1,
     );
   }
 }
